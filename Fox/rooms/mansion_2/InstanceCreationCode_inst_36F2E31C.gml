@@ -1,0 +1,1 @@
+targetRoom = Mansion_3

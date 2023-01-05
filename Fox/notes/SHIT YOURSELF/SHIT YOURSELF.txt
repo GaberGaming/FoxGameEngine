@@ -1,0 +1,21 @@
+-This game should not be sold!
+-If you see this game somewhere other than itch.io or gxc please report it at gabilikescatz@gmail.com
+-Coding and spriting by GabiLikesCatz
+-Music by iplux and Shruggie and TheFungang
+-Help with coding by Thejabco(new hud,better collisions, etc...)
+
+How to use dorrs and hallways!!!!
+{
+	the doors and hallways are located in Objects/level_structure/level_structure
+	 
+	How doors work
+	{
+		You want to go to a door you placed in the level then doubleclick it and go to the creation code
+		(this is how it should look like: https://ibb.co/5RLjRZ2)
+		Then you wanna type targetRoom = room you want to go to
+		(this is how it should look like: https://ibb.co/zHnqPpH)
+		After you do that you want to place a door number that will link the doors(make sure a door number does not repeat twice)
+		(this is how it should look like: the first room:https://ibb.co/5rFmndH and the second room: https://ibb.co/Jj78vxT)
+		And done!!!
+	}
+}

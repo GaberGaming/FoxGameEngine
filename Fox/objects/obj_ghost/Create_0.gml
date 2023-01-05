@@ -1,0 +1,10 @@
+image_alpha = 0.5
+hsp = 0
+vsp = 0
+time = 0
+angle = 4
+state = 0
+attackbuffer = random_range(60,120)
+depth = -200
+kek_y = 0
+kek_ytarget = 1
