@@ -117,56 +117,56 @@ function scr_player_normal(){
 		}
 		else
 		{
-		if !k_up
-		{
-			if grounded
+			if !k_up
 			{
-				state = 1
-				image_index = 0
-				airattack = 0
-				if attackstyle != "DASH"
-				movespeed = 6
-				if !instance_exists(obj_dasheffect)
+				if grounded
 				{
-					with instance_create_depth(x,y,depth+1,obj_dasheffect)
+					state = 1
+					image_index = 0
+					airattack = 0
+					if attackstyle != "DASH"
+					movespeed = 6
+					if !instance_exists(obj_dasheffect)
 					{
-						image_xscale = other.xscale
-						image_index = 0
+						with instance_create_depth(x,y,depth+1,obj_dasheffect)
+						{
+							image_xscale = other.xscale
+							image_index = 0
+						}
 					}
+					if attackstyle = "DASH"
+						movespeed = -1
+					//if attackstyle = "DASHATTACK"
+					//	vsp = -7
 				}
-				if attackstyle = "DASH"
-					movespeed = -1
-				//if attackstyle = "DASHATTACK"
-				//	vsp = -7
-			}
-			else if attackstyle != "DASH"
-			{
-				state = 1
-				image_index = 0
-				airattack = 1
-				movespeed = 6
-				//vsp = 0
-				if !instance_exists(obj_dasheffect)
+				else if attackstyle != "DASH"
 				{
-					with instance_create_depth(x,y,depth+1,obj_dasheffect)
+					state = 1
+					image_index = 0
+					airattack = 1
+					movespeed = 6
+					//vsp = 0
+					if !instance_exists(obj_dasheffect)
 					{
-						image_xscale = other.xscale
-						image_index = 0
+						with instance_create_depth(x,y,depth+1,obj_dasheffect)
+						{
+							image_xscale = other.xscale
+							image_index = 0
+						}
 					}
+					//if attackstyle = "DASHATTACK"
+						//vsp = -5
 				}
-				//if attackstyle = "DASHATTACK"
-					//vsp = -5
 			}
-		}
-		else
-		{
-			state = 11
-			movespeed = 0
-			if grounded
-				vsp = -14
 			else
-				vsp = -9
-		}
+			{
+				state = 11
+				movespeed = 0
+				if grounded
+					vsp = -14
+				else
+					vsp = -9
+			}
 		}
 	}
 	if dash = 1

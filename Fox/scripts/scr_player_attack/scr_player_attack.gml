@@ -2,9 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_attack(){
 	rgb = make_color_rgb(150,150,255)
-	if !audio_is_playing(sfx_walk) and attackstyle != "OLD" and attackstyle != "DASHATTACK"
+	if !audio_is_playing(sfx_walk) and attackstyle != "OLD" and attackstyle != "DASHATTACK" and sprite_index != spr_player_kick
 		sound(sfx_walk)
-	if !audio_is_playing(sfx_dashing) and attackstyle != "OLD" and attackstyle != "DASHATTACK"
+	if !audio_is_playing(sfx_dashing) and attackstyle != "OLD" and attackstyle != "DASHATTACK" and sprite_index != spr_player_kick
 		sound(sfx_dashing)
 	if !instance_exists(obj_speedlines)
 		instance_create_depth(x,y,depth,obj_speedlines)
@@ -49,22 +49,37 @@ function scr_player_attack(){
 	}
 	else if attackstyle = "SHOULDERBASH"
 	{
-	sprite_index = spr_player_shoulderbashold
+	sprite_index = spr_player_shoulderbashold//spr_player_kick
 	image_speed = 0.35
 	hsp = movespeed * xscale
-	if place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)
+	if grounded
 	{
-		if floor(image_index) < 9
-		{
-		if movespeed < 12
-		movespeed += 0.25
-		}
-		else
-		if movespeed > 0
-			movespeed -= 0.1
+		//if sprite_index != spr_player_kick {
+			if floor(image_index) < 9
+			{
+				if movespeed < 12 {
+					if sprite_index != spr_player_kick
+						movespeed += 0.25
+					else
+						movespeed += 0.05
+				}
+			}
+			else
+				if movespeed > 0
+					movespeed -= 0.1
+		//}
+		//else
+		//	if movespeed > 0
+		//		movespeed -= 0.05
 	}
-	else
-		movespeed = 10
+	else {
+		//if sprite_index != spr_player_kick
+			movespeed = 10
+		//else {
+		//	if movespeed > 0
+		//		movespeed -= 0.05
+		//}
+	}
 	if floor(image_index) = image_number - 1
 	{
 		//if !k_run
@@ -174,12 +189,12 @@ function scr_player_attack(){
 			groundpoundsmash = 0
 			vsp = -11
 		}
-	}*/
+	}
 	if grounded and k_down
 	{
 		state = 10
 		vsp = 0
 		image_index = 0
 		movespeed = 10
-	}
+	}*/
 }

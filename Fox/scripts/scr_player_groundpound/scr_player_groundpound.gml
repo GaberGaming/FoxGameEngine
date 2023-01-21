@@ -18,22 +18,24 @@ function scr_player_groundpound(){
 	{
 		if !place_meeting(x,y+1,obj_breakablesecret)
 		{
-			if !place_meeting(x,y+1,obj_slope)
-			{
-				state = 3
-				vsp = -11
-				movespeed = 0
-				image_index = 0
-				sound(sfx_bump)
-					repeat 6
-						instance_create_depth(x,y,depth,obj_hitstar)
-						instance_create_depth(x,y,depth,obj_hiteffect)
-			}
-			else
-			{
-				state  = 10
-				movespeed = 16
-				xscale = -sign(drawAngle)
+			if !place_meeting(x,y+1,obj_breakable) {
+				if !place_meeting(x,y+1,obj_slope)
+				{
+					state = 3
+					vsp = -11
+					movespeed = 0
+					image_index = 0
+					sound(sfx_bump)
+						repeat 6
+							instance_create_depth(x,y,depth,obj_hitstar)
+							instance_create_depth(x,y,depth,obj_hiteffect)
+				}
+				else
+				{
+					state  = 10
+					movespeed = 16
+					xscale = -sign(drawAngle)
+				}
 			}
 			//vsp = -(groundpoundsmash / 1.5)
 		}

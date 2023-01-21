@@ -21,4 +21,5 @@ if (place_meeting(x,y-1,obj_player)) and (obj_player.state = 7)
 	}*/
 	//global.collect += 10
 	instance_create_depth(x,y,depth,obj_10)
+	obj_player.vsp = -9
 }

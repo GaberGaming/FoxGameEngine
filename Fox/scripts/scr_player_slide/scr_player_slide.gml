@@ -6,13 +6,20 @@ function scr_player_slide(){
 	else
 	image_speed = 0.45
 	if grounded
-	sprite_index = spr_player_slide
-	else
+	state = 0//sprite_index = spr_player_slide
+	/*else
 	if sprite_index != spr_player_slidejump
 	{
-	sprite_index = spr_player_slidejump
-	image_index = 4
+		sprite_index = spr_player_slidejump
+		image_index = 0
+	}*/
+	if movespeed > 0
+		movespeed -= 0.1
+	if movespeed = 0 or movespeed < 0 {
+		state = 0
+		movespeed = 0
 	}
+	sprite_index = spr_player_slide
 	if sprite_index = spr_player_slidejump
 	{
 		if k_down
