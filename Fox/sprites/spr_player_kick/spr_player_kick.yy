@@ -38,7 +38,6 @@
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"99740dd7-b813-4edf-b0e3-fc9d223ee103",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a42d73e8-8804-4eda-9421-f960e088a52f",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"17e0199c-7724-4c19-9bd1-be4d0f2960d7",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"00db96e0-68f1-4d50-976d-12ed15e653b2",},
   ],
   "sequence": {
     "resourceType": "GMSequence",
@@ -50,7 +49,7 @@
     "playbackSpeedType": 1,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 11.0,
+    "length": 10.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -65,7 +64,6 @@
             {"id":"4c4fd424-6b54-4c45-8599-0dd7dd09b654","Key":7.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"99740dd7-b813-4edf-b0e3-fc9d223ee103","path":"sprites/spr_player_kick/spr_player_kick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"2bd75bbf-41dd-4929-a712-eed7b13cd603","Key":8.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a42d73e8-8804-4eda-9421-f960e088a52f","path":"sprites/spr_player_kick/spr_player_kick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"78e287b7-5836-4cf7-af0a-04135e426159","Key":9.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"17e0199c-7724-4c19-9bd1-be4d0f2960d7","path":"sprites/spr_player_kick/spr_player_kick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"f1fb9858-a7c8-4f4f-8333-75a5fa4b2b0e","Key":10.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"00db96e0-68f1-4d50-976d-12ed15e653b2","path":"sprites/spr_player_kick/spr_player_kick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,

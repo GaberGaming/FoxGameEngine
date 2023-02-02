@@ -49,19 +49,22 @@ function scr_player_attack(){
 	}
 	else if attackstyle = "SHOULDERBASH"
 	{
-	sprite_index = spr_player_shoulderbashold//spr_player_kick
+		if sprite_index != spr_player_shoulderbashold and sprite_index != spr_player_kick
+			sprite_index = choose(spr_player_kick,spr_player_shoulderbashold)
 	image_speed = 0.35
 	hsp = movespeed * xscale
+	if move = -xscale
+		state = 0
 	if grounded
 	{
 		//if sprite_index != spr_player_kick {
 			if floor(image_index) < 9
 			{
 				if movespeed < 12 {
-					if sprite_index != spr_player_kick
+					//if sprite_index != spr_player_kick
 						movespeed += 0.25
-					else
-						movespeed += 0.05
+					//else
+					//	movespeed += 0.05
 				}
 			}
 			else
