@@ -13,37 +13,37 @@ function scr_enemycollideplayer(){
 			storedimgspeed = image_speed
 			if state != 9
 			{
-			hitX = x
-			hitY = y
-			hitbuffer = 7
-			state = 2
-			baddieid = other.id
-			//camera_set_view_size(view_camera[0],900,500)
-			//sprite_index = choose(spr_player_attackhit,spr_player_attackhit2)
-			image_index = random_range(0,3)
-			global.combo += 1
-			stuncombo += 1
-			combostop = 30
-			combotime = 120
-			image_index = random_range(0,3)
-			chainsaw = 0
+				hitX = x
+				hitY = y
+				hitbuffer = 7
+				state = 2
+				baddieid = other.id
+				//camera_set_view_size(view_camera[0],900,500)
+				//sprite_index = choose(spr_player_attackhit,spr_player_attackhit2)
+				image_index = random_range(0,3)
+				global.combo += 1
+				stuncombo += 1
+				combostop = 30
+				combotime = 120
+				image_index = random_range(0,3)
+				chainsaw = 0
 			}
 			else
 			{
-			hitX = x
-			hitY = y
-			hitbuffer = 3
-			state = 2
-			baddieid = other.id
-			//camera_set_view_size(view_camera[0],900,500)
-			//sprite_index = choose(spr_player_attackhit,spr_player_attackhit2)
-			//image_index = random_range(0,3)
-			global.combo += 1
-			stuncombo += 1
-			combostop = 30
-			combotime = 120
-			//image_index = random_range(0,3)
-			chainsaw = 1
+				hitX = x
+				hitY = y
+				hitbuffer = 3
+				state = 2
+				baddieid = other.id
+				//camera_set_view_size(view_camera[0],900,500)
+				//sprite_index = choose(spr_player_attackhit,spr_player_attackhit2)
+				//image_index = random_range(0,3)
+				global.combo += 1
+				stuncombo += 1
+				combostop = 30
+				combotime = 120
+				//image_index = random_range(0,3)
+				chainsaw = 1
 			}
 			repeat 6
 				instance_create_depth(x,y,depth,obj_hitstar)

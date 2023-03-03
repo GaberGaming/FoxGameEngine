@@ -85,124 +85,46 @@ function scr_player_normal(){
 			if movespeed < 6
 				movespeed += 0.25
 		}
-		else if momentum != 1
+		else
 		{
-			/*if movespeed > 0
+			if movespeed > 0
 				movespeed -= 0.25
-			if movespeed < 0*/
+			if movespeed < 0
 				movespeed = 0
 		}
 	}
-	if k_attack and attackstyle != "DASH" and airattack = 0
+	if k_attack and airattack = 0
 	{
 		sound(sfx_dash)
-		if attackstyle = "OLD"
+		if grounded
 		{
-			if grounded
-			{
-				if attackstyle = "OLD"
-				sprite_index = spr_player_attack
-				else
-				airattack = 0
-			}
-			else
-			{
-				if attackstyle = "OLD"
-				sprite_index = spr_player_attackairprep
-				else
-				airattack = 1
-			}
 			state = 1
 			image_index = 0
+			airattack = 0
+			movespeed = 10
+			if !instance_exists(obj_dasheffect)
+			{
+				with instance_create_depth(x,y,depth+1,obj_dasheffect)
+				{
+					image_xscale = other.xscale
+					image_index = 0
+				}
+			}
 		}
 		else
 		{
-			if !k_up
+			state = 1
+			image_index = 0
+			airattack = 1
+			movespeed = 6
+			if !instance_exists(obj_dasheffect)
 			{
-				if grounded
+				with instance_create_depth(x,y,depth+1,obj_dasheffect)
 				{
-					state = 1
+					image_xscale = other.xscale
 					image_index = 0
-					airattack = 0
-					if attackstyle != "DASH"
-					movespeed = 10
-					if !instance_exists(obj_dasheffect)
-					{
-						with instance_create_depth(x,y,depth+1,obj_dasheffect)
-						{
-							image_xscale = other.xscale
-							image_index = 0
-						}
-					}
-					if attackstyle = "DASH"
-						movespeed = -1
-					//if attackstyle = "DASHATTACK"
-					//	vsp = -7
-				}
-				else if attackstyle != "DASH"
-				{
-					state = 1
-					image_index = 0
-					airattack = 1
-					movespeed = 6
-					//vsp = 0
-					if !instance_exists(obj_dasheffect)
-					{
-						with instance_create_depth(x,y,depth+1,obj_dasheffect)
-						{
-							image_xscale = other.xscale
-							image_index = 0
-						}
-					}
-					//if attackstyle = "DASHATTACK"
-						//vsp = -5
 				}
 			}
-			else
-			{
-				state = 11
-				movespeed = 0
-				if grounded
-					vsp = -14
-				else
-					vsp = -9
-			}
-		}
-	}
-	if dash = 1
-	{
-		if grounded and k_attack_down// and attackstyle = "DASH"
-		{
-			sound(sfx_dash)
-				state = 1
-				image_index = 0
-				if !instance_exists(obj_dasheffect)
-				{
-					with instance_create_depth(x,y,depth+1,obj_dasheffect)
-					{
-						image_xscale = other.xscale
-						image_index = 0
-					}
-				}
-				attackstyle = "DASH"
-		}
-		if !grounded and k_attack
-		{
-			sound(sfx_dash)
-				state = 1
-				image_index = 0
-				airattack = 1
-				movespeed = 6
-				vsp = 0
-				if !instance_exists(obj_dasheffect)
-				{
-					with instance_create_depth(x,y,depth+1,obj_dasheffect)
-					{
-						image_xscale = other.xscale
-						image_index = 0
-					}
-				}	
-				attackstyle = "SHOULDERBASH"
 		}
 	}
 	if !grounded and k_down

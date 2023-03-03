@@ -18,15 +18,6 @@ switch state
 	case 999999:
 		scr_player_levelend()
 	break
-	case 4:
-		scr_player_spring()
-	break
-	case 5:
-		scr_player_dash()
-	break
-	case 6:
-		scr_player_ramp()
-	break
 	case 7:
 		scr_player_groundpound()
 	break
@@ -37,23 +28,20 @@ switch state
 		vsp = 0
 		image_speed = 0
 	break
-	case 9:
-		scr_player_chainsaw()
-	break
 	case 10:
 		scr_player_slide()
 	break
 	case 11:
 		scr_player_punch()
 	break
-	case 12:
-		scr_player_frozen()
-	break
 	case 13:
 		scr_player_hurt()
 	break
 	case 14:
-		scr_player_attackSpin()
+		scr_player_scaredjump()
+	break
+	case 15:
+		scr_player_dashpad()
 	break
 }
 if state != 3
@@ -94,7 +82,7 @@ if place_meeting(x, (y + 1), obj_slope)
 }
 else
 	drawAngle = 0
-if state = 1 or state = 3 or state = 5 or state = 9 or state = 11 or state = 10 or state = 2 or state = 7
+if state = 1 or state = 3 or state = 5 or state = 9 or state = 11 or state = 10 or state = 2 or state = 7 or state = 15
 	scr_afterimage()
 if y > room_height * 1.2
 {
